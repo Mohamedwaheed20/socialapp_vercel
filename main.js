@@ -46,8 +46,10 @@ const corsOptions = {
         app.use('/post', postcontroller);
         app.use('/comment', commentcontroller);
         app.use('/react',reactscontroller);
-        res.status(200).json({ message: "server is runningg" })
-         database_connect();
+app.get('/',(req,res)=>{
+    res.status(200).json({ message: "server is running" })
+})         
+database_connect();
 
       const server =  app.listen(process.env.PORT, () => {
             console.log(`server is running on port ${process.env.PORT}`);
