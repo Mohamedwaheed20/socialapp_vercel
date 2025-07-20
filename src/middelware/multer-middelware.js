@@ -7,17 +7,6 @@ export const multermiddelware = (destinationpath = "general", allowedtypes = [])
         //     fs.mkdirSync(destnationfolder, { recursive: true })
         // }
         const storage = multer.diskStorage({
-
-
-            destination: (req, file, cb) => {
-                cb(null, destnationfolder) //cb === next
-            },
-            filename: (req, file, cb) => {
-
-                const uniqueFilename = Date.now() + "-" + Math.round(Math.random() * 1e9)
-
-                cb(null, uniqueFilename + "-" + file.originalname)
-            }
         })
 
         const fileFilter = (req, file, cb) => {
