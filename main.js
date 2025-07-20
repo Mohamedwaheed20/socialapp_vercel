@@ -22,7 +22,7 @@ const limiter=rateLimit({
   legacyHeaders:false
 })
 
-    async function bootstrap() {
+    async function bootstrap(req,res,next) {
          
 const whitelist = [process.env.front_end_url, undefined];
 const corsOptions = {
@@ -46,7 +46,8 @@ const corsOptions = {
         app.use('/post', postcontroller);
         app.use('/comment', commentcontroller);
         app.use('/react',reactscontroller);
-        database_connect();
+        res.status(200).json({ message: "server is runningg" })
+         database_connect();
 
       const server =  app.listen(process.env.PORT, () => {
             console.log(`server is running on port ${process.env.PORT}`);

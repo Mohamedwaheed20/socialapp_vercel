@@ -2,10 +2,10 @@ import multer from "multer";
 import fs from 'fs'
 export const multermiddelware = (destinationpath = "general", allowedtypes = []) => {
     try {
-        const destnationfolder = `assets/${destinationpath}`
-        if (!fs.existsSync(destnationfolder)) {
-            fs.mkdirSync(destnationfolder, { recursive: true })
-        }
+        // const destnationfolder = `assets/${destinationpath}`
+        // if (!fs.existsSync(destnationfolder)) {
+        //     fs.mkdirSync(destnationfolder, { recursive: true })
+        // }
         const storage = multer.diskStorage({
 
 
