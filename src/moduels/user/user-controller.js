@@ -26,7 +26,7 @@ usercontroller.put('/update-profile',authantication_middelware(),authservice.upd
 
 
 usercontroller.get('/get-profile',authantication_middelware(),authservice.getprofile);
-usercontroller.get('/list-users',authantication_middelware(),authservice.listusers);
+usercontroller.get('/list-users',authservice.listusers);
 usercontroller.post('/send-request/:requesttoid',authantication_middelware(),authservice.sendrequest);
 usercontroller.patch('/accept-friend-request/:requestFromId',authantication_middelware(),authservice.AcceptFriendRequestService);
 usercontroller.get('/list-friends',authantication_middelware(),authservice.listfriend);
